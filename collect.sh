@@ -90,6 +90,10 @@ rm -f "$output_file"
   cmd_exists clang && clang --version 2>&1
 
   printf '\n'
+  printf '== CLT SDKs ==================================================\n'
+  cmd_exists ls && ls /Library/Developer/CommandLineTools/SDKs/ 2>&1
+
+  printf '\n'
   printf '== cmake =====================================================\n'
   cmd_exists cmake && cmake --version 2>&1
 
@@ -119,7 +123,27 @@ rm -f "$output_file"
 
   printf '\n'
   printf '== llvm-config libs =================================================\n'
-  cmd_exists llvm-config && llvm-config --libs 2>&1  
+  cmd_exists llvm-config && llvm-config --libs 2>&1
+
+  printf '\n'
+  printf '== llvm-config system-libs ============================================\n'
+  cmd_exists llvm-config && llvm-config --system-libs 2>&1
+
+  printf '\n'
+  printf '== llvm-config components ============================================\n'
+  cmd_exists llvm-config && llvm-config --components 2>&1
+
+  printf '\n'
+  printf '== llvm-config bindir ============================================\n'
+  cmd_exists llvm-config && llvm-config --bindir 2>&1
+
+  printf '\n'
+  printf '== llvm-config libdir ============================================\n'
+  cmd_exists llvm-config && llvm-config --libdir 2>&1
+
+  printf '\n'
+  printf '== llvm-config includedir ============================================\n'
+  cmd_exists llvm-config && llvm-config --includedir 2>&1
 
   printf '\n'
   printf '== python =====================================================\n'
